@@ -1,0 +1,248 @@
+{
+  "keyword": "facebook ad creative generator",
+  "title": "Best Facebook Ad Creative Generator: 6 AI Tools Ranked by API (2026)",
+  "lastChecked": "2026-10-23",
+  "capabilityChecks": [
+    {
+      "key": "publicApi",
+      "label": "Public API"
+    },
+    {
+      "key": "completionWebhook",
+      "label": "Completion webhook"
+    },
+    {
+      "key": "mcpServer",
+      "label": "MCP server"
+    },
+    {
+      "key": "severalSizesFromOneConcept",
+      "label": "Several sizes from one concept"
+    },
+    {
+      "key": "videoAds",
+      "label": "Video ads"
+    },
+    {
+      "key": "launchToMetaFromTheTool",
+      "label": "Launch to Meta from the tool"
+    },
+    {
+      "key": "approvalStep",
+      "label": "Approval step"
+    }
+  ],
+  "tools": [
+    {
+      "n": 1,
+      "name": "Wireflow",
+      "tagline": "Best overall for turning a brief into finished ads for every placement from one call",
+      "homepage": "https://www.wireflow.ai/",
+      "docs": "https://www.wireflow.ai/docs/api/overview",
+      "pricing": "https://www.wireflow.ai/pricing",
+      "claudeConnection": "Custom connector, OAuth sign-in",
+      "restApi": true,
+      "modelSupport": "100+ image, video and audio models as nodes",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": null,
+      "quickstart": [
+        {
+          "label": "Add the Wireflow connector to Claude Code, from the wireflowINC/skills README. Then run /mcp to sign in.",
+          "lang": "bash",
+          "code": "claude mcp add --transport http wireflow https://www.wireflow.ai/api/mcp"
+        },
+        {
+          "label": "Or run a saved board from code: send its input values to this endpoint with an API key, then poll the execution or add a webhook block. The request format is in the API reference linked under Docs.",
+          "lang": "text",
+          "code": "POST /api/v1/workflows/{id}/run"
+        }
+      ],
+      "moneyPage": "https://www.wireflow.ai/features/ai-video-workflow",
+      "moneyPageLabel": "Wireflow AI video workflow page",
+      "capabilities": {
+        "publicApi": true,
+        "completionWebhook": true,
+        "mcpServer": true,
+        "severalSizesFromOneConcept": true,
+        "videoAds": true,
+        "launchToMetaFromTheTool": false,
+        "approvalStep": false
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 2,
+      "name": "Omneky",
+      "tagline": "Best for generating ads and launching them on 8 platforms",
+      "homepage": "https://www.omneky.com/",
+      "docs": "https://www.omneky.com/api-docs",
+      "pricing": "https://www.omneky.com/pricing-plans",
+      "claudeConnection": "MCP server, sign in with Omneky",
+      "restApi": true,
+      "modelSupport": null,
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "Lite, Standard and Pro start with a 7-day free trial. A trial is not listed here as a free tier.",
+      "quickstart": [
+        {
+          "label": "Add the Omneky MCP server to a client that reads an mcpServers config, from the Omneky MCP page. In Claude, add the URL as a custom connector and sign in.",
+          "lang": "json",
+          "code": "{\n  \"mcpServers\": {\n    \"omneky\": {\n      \"url\": \"https://mcp.omneky.com/mcp\"\n    }\n  }\n}"
+        }
+      ],
+      "capabilities": {
+        "publicApi": true,
+        "completionWebhook": true,
+        "mcpServer": true,
+        "severalSizesFromOneConcept": true,
+        "videoAds": true,
+        "launchToMetaFromTheTool": true,
+        "approvalStep": true
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 3,
+      "name": "Creatify",
+      "tagline": "Best for UGC-style video ads with AI actors",
+      "homepage": "https://creatify.ai/",
+      "docs": "https://docs.creatify.ai/",
+      "pricing": "https://creatify.ai/pricing",
+      "claudeConnection": "Creatify MCP on Pro",
+      "restApi": true,
+      "modelSupport": null,
+      "freeTier": "yes",
+      "repo": null,
+      "note": "API plans (API Starter, API Pro) are billed separately from the app plans (checked 2026-10-11).",
+      "quickstart": [
+        {
+          "label": "Start from a product page, from the Creatify API quickstart. Use your own API ID and API key.",
+          "lang": "bash",
+          "code": "curl --request POST \\\n  --url https://api.creatify.ai/api/links/ \\\n  --header 'Content-Type: application/json' \\\n  --header 'X-API-ID: your-api-id' \\\n  --header 'X-API-KEY: your-api-key' \\\n  --data '{\n    \"url\": \"https://example.com/product-page\"\n  }'"
+        }
+      ],
+      "capabilities": {
+        "publicApi": true,
+        "completionWebhook": null,
+        "mcpServer": true,
+        "severalSizesFromOneConcept": null,
+        "videoAds": true,
+        "launchToMetaFromTheTool": null,
+        "approvalStep": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 4,
+      "name": "AdCreative",
+      "tagline": "Best for many banner variations without a design team",
+      "homepage": "https://www.adcreative.ai/",
+      "docs": null,
+      "pricing": null,
+      "claudeConnection": null,
+      "restApi": null,
+      "modelSupport": null,
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "Prices are in the pricing section of the homepage, which shows several versions with promo labels. A Digital Asset Management API appears only as an Enterprise feature (checked 2026-10-11).",
+      "quickstart": null,
+      "capabilities": {
+        "publicApi": null,
+        "completionWebhook": null,
+        "mcpServer": null,
+        "severalSizesFromOneConcept": true,
+        "videoAds": true,
+        "launchToMetaFromTheTool": true,
+        "approvalStep": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 5,
+      "name": "Pencil",
+      "tagline": "Best for enterprise teams that need brand and legal sign-off",
+      "homepage": "https://trypencil.com/",
+      "docs": null,
+      "pricing": "https://trypencil.com/pricing",
+      "claudeConnection": null,
+      "restApi": null,
+      "modelSupport": "Models from OpenAI, Google, Adobe, Runway and Stability AI",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": null,
+      "quickstart": null,
+      "capabilities": {
+        "publicApi": null,
+        "completionWebhook": null,
+        "mcpServer": null,
+        "severalSizesFromOneConcept": true,
+        "videoAds": true,
+        "launchToMetaFromTheTool": true,
+        "approvalStep": true
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 6,
+      "name": "Picsart",
+      "tagline": "Best for brand kits and bulk edits on a design plan",
+      "homepage": "https://picsart.com/",
+      "docs": null,
+      "pricing": "https://picsart.com/pricing",
+      "claudeConnection": "MCP integration listed",
+      "restApi": null,
+      "modelSupport": null,
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "The pricing page lists a CLI and an MCP integration and no public API (checked 2026-10-11).",
+      "quickstart": null,
+      "capabilities": {
+        "publicApi": null,
+        "completionWebhook": null,
+        "mcpServer": true,
+        "severalSizesFromOneConcept": null,
+        "videoAds": null,
+        "launchToMetaFromTheTool": null,
+        "approvalStep": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    }
+  ]
+}
