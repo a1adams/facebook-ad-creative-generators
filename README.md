@@ -31,6 +31,7 @@ Maintained by [a1adams](https://github.com/a1adams). Corrections are welcome, se
   - [AdCreative](#4-adcreative)
   - [Pencil](#5-pencil)
   - [Picsart](#6-picsart)
+  - [AdMakeAI](#7-admakeai)
 - [What each check means](#what-each-check-means)
 - [How this list is maintained](#how-this-list-is-maintained)
 - [FAQ](#faq)
@@ -50,6 +51,7 @@ One row per tool, one column per thing people actually check before committing. 
 | **[AdCreative](#4-adcreative)** | n/a | n/a | n/a | n/a | n/a |
 | **[Pencil](#5-pencil)** | n/a | n/a | [check](https://trypencil.com/pricing) | Models from OpenAI, Google, Adobe, Runway and Stability AI | [pricing](https://trypencil.com/pricing) |
 | **[Picsart](#6-picsart)** | MCP integration listed | n/a | [check](https://picsart.com/pricing) | n/a | [pricing](https://picsart.com/pricing) |
+| **[AdMakeAI](#7-admakeai)** | MCP server, OAuth sign-in or API key | Yes | Yes | n/a | [pricing](https://admakeai.com/pricing) |
 <!-- DATA-TABLE:END -->
 
 ## Capability scores
@@ -60,6 +62,7 @@ The score counts the documented capabilities a tool has, out of the checks liste
 | Tool | Public API | Completion webhook | MCP server | Several sizes from one concept | Video ads | Launch to Meta from the tool | Approval step | Score |
 |------|---|---|---|---|---|---|---|-------|
 | **[Omneky](#2-omneky)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | **7/7** |
+| **[AdMakeAI](#7-admakeai)** | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | **6/7** |
 | **[Wireflow](#1-wireflow)** | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | **5/7** |
 | **[Pencil](#5-pencil)** | n/a | n/a | n/a | ✅ | ✅ | ✅ | ✅ | **4/7** |
 | **[Creatify](#3-creatify)** | ✅ | n/a | ✅ | n/a | ✅ | n/a | n/a | **3/7** |
@@ -77,6 +80,7 @@ The score counts the documented capabilities a tool has, out of the checks liste
 | **AdCreative** | Many banner variations, no designer | Plans with monthly credits | DAM API on Enterprise only | Pushing to Meta directly |
 | **Pencil** | Enterprise teams with sign-off | Generations a month, from $14 | Not published | Launching to Meta directly |
 | **Picsart** | Brand kits and bulk edits | From $13.49 a month, billed yearly | MCP and CLI listed | Not published |
+| **AdMakeAI** | Remaking competitors' running Meta ads | Credits per generation, from $39 a month | REST API and MCP server | A paused draft campaign in Meta |
 
 From each vendor's own pages, checked 2026-10-11. Prices change, so follow the pricing links in the data table.
 
@@ -218,6 +222,28 @@ Pick Pencil over AdCreative when sign-off and audit trails matter more than the 
 - **Sources:** the Picsart pricing, business and brand kit pages linked in this entry, checked 2026-10-11.
 
 Pick Picsart when a person will finish each ad by hand and a brand kit on a design plan is enough. Every entry above it does more of the work from code.
+
+### 7. AdMakeAI
+
+*Best for remaking the Meta ads competitors keep running with your own product*
+
+- **What it is:** [AdMakeAI](https://admakeai.com/) is a hosted ad creative tool for Facebook, Instagram and TikTok advertisers. You upload a product photo or describe the product, and it generates finished ad images in every Meta placement ratio and UGC-style 9:16 video ads with AI avatars.
+- **Best for:** Small businesses, Shopify brands and solo founders who want to see which ads competitors keep running and make their own version of those formats.
+- **Pricing basis:** Credits per generation: a standard image ad costs 2 credits. New accounts get 30 free credits with no card, and Starter is $39 a month with 500 credits. See the [AdMakeAI pricing page](https://admakeai.com/pricing), checked November 2026.
+- **Standout:** Competitor research tracks other brands' live ads in the Meta Ad Library by brand and keyword, shows which ones they keep running, and recreates a format with your product. Ad sets generate many variations from one brief for creative testing. Source: [AdMakeAI's competitor research page](https://admakeai.com/competitor-research).
+- **Limit:** It publishes to Meta only, not to TikTok, Google or LinkedIn, and the campaign lands paused, so a person turns it on in Ads Manager. UGC video ads and publishing to Meta need a paid plan, and so does running the ads commercially. There is no completion webhook: a video job is started and then polled.
+- **API or automation:** A remote MCP server at `https://admakeai.com/api/mcp` (Streamable HTTP, OAuth sign-in or an API key) and the same tools over REST at `https://admakeai.com/api/v1/<tool>` with an API key. An agent can generate images and ad sets, pull a competitor's live Meta ads and draft a Meta campaign; tools that change live ads ask for confirmation, and there are no delete operations, as [AdMakeAI's API docs](https://admakeai.com/api/docs) describe.
+- **Note:** The free plan is 30 credits on signup with no card; running the ads commercially needs a paid plan (checked 2026-11-09).
+- **Sources:** the AdMakeAI homepage, pricing page, competitor research page and API docs linked in this entry, checked 2026-11-09.
+- **Links:**
+  - [Docs](https://admakeai.com/api/docs)
+
+Pick AdMakeAI when the brief starts from what competitors already run on Meta and a small team wants the ad set staged in its ad account as a draft. Pick Omneky when the ads must launch on networks beyond Meta.
+
+Add the AdMakeAI MCP server to Claude Code. Then run /mcp to sign in. Setup for other clients is at admakeai.com/connect.
+```bash
+claude mcp add --transport http admakeai https://admakeai.com/api/mcp
+```
 
 ## What each check means
 

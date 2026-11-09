@@ -243,6 +243,43 @@
         "latestReleaseDate": null,
         "checkedAt": null
       }
+    },
+    {
+      "n": 7,
+      "name": "AdMakeAI",
+      "tagline": "Best for remaking the Meta ads competitors keep running with your own product",
+      "homepage": "https://admakeai.com/",
+      "docs": "https://admakeai.com/api/docs",
+      "pricing": "https://admakeai.com/pricing",
+      "claudeConnection": "MCP server, OAuth sign-in or API key",
+      "restApi": true,
+      "modelSupport": null,
+      "freeTier": "yes",
+      "repo": null,
+      "note": "The free plan is 30 credits on signup with no card; running the ads commercially needs a paid plan (checked 2026-11-09).",
+      "quickstart": [
+        {
+          "label": "Add the AdMakeAI MCP server to Claude Code. Then run /mcp to sign in. Setup for other clients is at admakeai.com/connect.",
+          "lang": "bash",
+          "code": "claude mcp add --transport http admakeai https://admakeai.com/api/mcp"
+        }
+      ],
+      "capabilities": {
+        "publicApi": true,
+        "completionWebhook": false,
+        "mcpServer": true,
+        "severalSizesFromOneConcept": true,
+        "videoAds": true,
+        "launchToMetaFromTheTool": true,
+        "approvalStep": true
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
     }
   ]
 }
